@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b35">
+<meta name="description" content="Le Coffret des Prières — Un espace de prière, de paix et de méditation.">
+<title>Le Coffret des Prières</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #101b35;
+  --navy-light: #1c2b4c;
+  --gold: #c9a96e;
+  --gold-light: #e6d2a6;
+  --cream: #f8f5ed;
+  --paper: #fffdf8;
+  --ink: #303342;
+  --muted: #777989;
+  --line: #e9e2d5;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 20px 6%;
+  border-bottom: 1px solid rgba(201,169,110,.35);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-symbol {
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+
+.brand-name {
+  font-family: var(--serif);
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: .5px;
+}
+
+.brand-subtitle {
+  color: var(--gold-light);
+  font-size: 9px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.header-note {
+  color: #d8d9e0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201,169,110,.15), transparent 60%),
+    var(--navy);
+  color: white;
+  text-align: center;
+  padding: 78px 20px 88px;
+}
+
+.hero-symbol {
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  color: var(--gold-light);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(42px, 7vw, 70px);
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #d8dbe4;
+  font-size: 15px;
+}
+
+.gold-line {
+  width: 65px;
+  height: 1px;
+  background: var(--gold);
+  margin: 26px auto;
+}
+
+main {
+  max-width: 1120px;
+  margin: -35px auto 0;
+  padding: 0 22px 70px;
+  position: relative;
+}
+
+.daily-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(20,25,40,.07);
+  text-align: center;
+}
+
+.daily-label {
+  color: #9a7843;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.daily-card h2 {
+  font: 500 32px var(--serif);
+  color: var(--navy);
+  margin: 8px 0;
+}
+
+.daily-card p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 18px;
+  font-size: 14px;
+}
+
+.gold-button, .outline-button {
+  border-radius: 3px;
+  padding: 11px 20px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  transition: .2s;
+}
+
+.gold-button {
+  background: var(--navy);
+  color: white;
+  border: 1px solid var(--navy);
+}
+
+.gold-button:hover {
+  background: #263858;
+}
+
+.outline-button {
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid var(--gold);
+}
+
+.outline-button:hover {
+  background: #f5efdf;
+}
+
+.section-heading {
+  text-align: center;
+  margin: 58px 0 28px;
+}
+
+.section-heading .eyebrow { color: #a17d46; }
+
+.section-heading h2 {
+  font: 500 38px var(--serif);
+  color: var(--navy);
+  margin: 5px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 13px 15px 13px 40px;
+  color: var(--ink);
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: var(--gold);
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  color: #a18b68;
+}
+
+.filter-button {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 11px 15px;
+  color: var(--navy);
+  border-radius: 3px;
+}
+
+.filter-button.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.category-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.prayer-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 23px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  min-height: 225px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.prayer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(20,25,40,.07);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-tag {
+  color: #9a7843;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.favorite-button {
+  border: 0;
+  background: transparent;
+  color: #b3a997;
+  font-size: 22px;
+  padding: 0 3px;
+}
+
+.favorite-button.selected { color: #b27a55; }
+
+.prayer-card h3 {
+  font: 600 25px var(--serif);
+  color: var(--navy);
+  line-height: 1.12;
+  margin: 18px 0 9px;
+}
+
+.prayer-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 13px;
+}
+
+.card-reference {
+  font: italic 14px var(--serif);
+  color: #9a7843;
+}
+
+.read-button {
+  background: transparent;
+  border: 0;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.empty-state {
+  display: none;
+  text-align: center;
+  padding: 45px 20px;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+footer {
+  background: var(--navy);
+  color: #d4d6de;
+  text-align: center;
+  padding: 38px 20px;
+}
+
+footer .footer-brand {
+  font: 500 27px var(--serif);
+  color: var(--gold-light);
+}
+
+footer p {
+  font-size: 11px;
+  margin: 8px 0 0;
+  color: #aeb3c1;
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(8,14,29,.76);
+  padding: 20px;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop.open { display: flex; }
+
+.modal {
+  width: min(690px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--paper);
+  padding: 35px clamp(22px, 6vw, 55px);
+  border-radius: 4px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 27px;
+}
+
+.modal-category {
+  color: #a17d46;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+.modal h2 {
+  font: 600 38px var(--serif);
+  color: var(--navy);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+.modal-reference {
+  color: #9a7843;
+  font: italic 17px var(--serif);
+  margin-bottom: 24px;
+}
+
+.modal-prayer {
+  font: 400 19px/1.85 var(--serif);
+  color: #393b48;
+  white-space: pre-line;
+}
+
+.reflection {
+  margin-top: 25px;
+  padding: 18px;
+  background: #f4efe4;
+  border-left: 2px solid var(--gold);
+}
+
+.reflection strong {
+  display: block;
+  font: 600 19px var(--serif);
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.reflection p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  align-items: center;
+}
+
+.font-control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.font-control button {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 6px 10px;
+  color: var(--navy);
+}
+
+.toast {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  z-index: 20;
+}
+
+.toast.show { opacity: 1; }
+
+@media(max-width: 800px) {
+  .prayer-grid { grid-template-columns: repeat(2, 1fr); }
+  .header-note { display: none; }
+}
+
+@media(max-width: 540px) {
+  .hero { padding: 60px 20px 75px; }
+  .prayer-grid { grid-template-columns: 1fr; }
+  .daily-card { padding: 25px 18px; }
+  .section-heading h2 { font-size: 32px; }
+  .controls { flex-direction: column; }
+  .filter-button { width: 100%; }
+  .modal { padding-top: 48px; }
+  .modal h2 { font-size: 32px; }
+  .modal-prayer { font-size: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-symbol">✧</div>
+      <div>
+        <div class="brand-name">Le Coffret des Prières</div>
+        <div class="brand-subtitle">Foi · Paix · Espérance</div>
+      </div>
+    </div>
+    <div class="header-note">UN ESPACE POUR NOURRIR VOTRE FOI</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-symbol">✧</div>
+  <div class="eyebrow">Votre rendez-vous avec la paix intérieure</div>
+  <h1>Un moment avec Dieu,<br>chaque jour.</h1>
+  <div class="gold-line"></div>
+  <p>Des prières pour apaiser votre cœur, fortifier votre foi et retrouver l'espérance dans chaque saison de votre vie.</p>
+</section>
+
+<main>
+  <section class="daily-card">
+    <div class="daily-label">✧ Votre prière du jour ✧</div>
+    <h2 id="daily-title">Un instant de paix</h2>
+    <p id="daily-description">Prenez quelques instants pour déposer vos préoccupations et ouvrir votre cœur à Dieu.</p>
+    <button class="gold-button" id="daily-button">Lire la prière du jour</button>
+  </section>
+
+  <section class="section-heading">
+    <div class="eyebrow">Une collection pour votre âme</div>
+    <h2>Explorez les prières</h2>
+    <p>Choisissez les mots qui correspondent à ce que votre cœur traverse aujourd'hui.</p>
+  </section>
+
+  <div class="controls">
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+      <input type="search" id="search" placeholder="Rechercher une prière...">
+    </div>
+    <button class="filter-button" id="favorites-filter">♡ Mes favoris</button>
+  </div>
+
+  <div class="category-filters" id="categories">
+    <button class="filter-button active" data-category="all">Toutes les prières</button>
+    <button class="filter-button" data-category="paix">Paix et réconfort</button>
+    <button class="filter-button" data-category="foi">Foi et protection</button>
+    <button class="filter-button" data-category="gratitude">Gratitude et provision</button>
+    <button class="filter-button" data-category="esperance">Pardon et espérance</button>
+  </div>
+
+  <div class="prayer-grid" id="prayer-grid"></div>
+  <div class="empty-state" id="empty-state">
+    Aucune prière ne correspond à votre recherche.
+  </div>
+</main>
+
+<footer>
+  <div class="footer-brand">Le Coffret des Prières</div>
+  <div class="gold-line"></div>
+  <p>Que la paix de Dieu accompagne chacun de vos jours.</p>
+  <p>Un espace de prière, de paix et de méditation.</p>
+</footer>
+
+<div class="modal-backdrop" id="modal-backdrop">
+  <article class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Fermer">×</button>
+    <div class="modal-category" id="modal-category"></div>
+    <h2 id="modal-title"></h2>
+    <div class="modal-reference" id="modal-reference"></div>
+    <div class="modal-prayer" id="modal-prayer"></div>
+    <div class="reflection">
+      <strong>Un instant de réflexion</strong>
+      <p id="modal-reflection"></p>
+    </div>
+    <div class="modal-actions">
+      <button class="gold-button" id="copy-button">Copier la prière</button>
+      <button class="outline-button" id="modal-favorite">♡ Ajouter aux favoris</button>
+      <div class="font-control">
+        <button id="font-down" aria-label="Diminuer la taille">A−</button>
+        <button id="font-up" aria-label="Augmenter la taille">A+</button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="toast" id="toast">Prière copiée avec succès.</div>
+
+<script>
+const prayers = [
+{
+ id:1, category:"paix", categoryName:"Paix et réconfort",
+ title:"Quand le cœur est inquiet",
+ reference:"Philippiens 4:6-7",
+ description:"Pour les jours où les pensées deviennent trop lourdes.",
+ prayer:`Seigneur mon Dieu,
+
+Aujourd'hui, je viens devant Toi avec tout ce qui habite mon cœur. Tu connais mes inquiétudes, mes pensées silencieuses et les questions auxquelles je ne trouve pas encore de réponse.
+
+Apprends-moi à ne pas laisser la peur diriger mes journées. Aide-moi à déposer devant Toi ce que je ne peux pas contrôler et à accueillir la paix que Toi seul peux donner.
+
+Quand mon esprit s'agite, rappelle-moi que je ne suis pas seul. Quand je doute, renouvelle ma confiance. Quand je me sens dépassé, donne-moi la force d'avancer un pas après l'autre.
+
+Que Ta paix garde mon cœur et mes pensées aujourd'hui.
+
+Amen.`,
+ reflection:"Qu'est-ce qui occupe actuellement mon esprit et que je pourrais confier à Dieu aujourd'hui ?"
+},
+{
+ id:2, category:"paix", categoryName:"Paix et réconfort",
+ title:"Dans les moments de peur",
+ reference:"Psaume 56:4",
+ description:"Une prière pour retrouver du courage lorsque la peur apparaît.",
+ prayer:`Père céleste,
+
+Dans les moments où la peur prend trop de place, je cherche refuge auprès de Toi.
+
+Tu connais mes fragilités et les situations qui me semblent difficiles à affronter. Donne-moi le courage de regarder devant moi sans être paralysé par ce que je ne connais pas.
+
+Aide-moi à me souvenir que le courage ne signifie pas ne jamais avoir peur, mais choisir de continuer à avancer avec confiance.
+
+Fortifie mon cœur, éclaire mes décisions et accompagne chacun de mes pas.
+
+Je remets entre Tes mains mes inquiétudes et mon avenir.
+
+Amen.`,
+ reflection:"Quelle peur ai-je besoin de remettre entre les mains de Dieu ?"
+},
+{
+ id:3, category:"paix", categoryName:"Paix et réconfort",
+ title:"Retrouver la paix intérieure",
+ reference:"Jean 14:27",
+ description:"Pour retrouver le calme au milieu du tumulte quotidien.",
+ prayer:`Seigneur,
+
+Je désire retrouver le calme au fond de mon âme.
+
+Le bruit du monde, les responsabilités et les préoccupations peuvent parfois m'éloigner de l'essentiel. Aide-moi à faire silence, à respirer et à reconnaître Ta présence dans ma vie.
+
+Délivre-moi de l'agitation inutile et apprends-moi à accueillir chaque journée avec patience.
+
+Que mes paroles soient douces, que mes pensées soient paisibles et que mes actions reflètent l'amour.
+
+Je choisis aujourd'hui de rechercher la paix plutôt que l'inquiétude.
+
+Amen.`,
+ reflection:"Quelle petite habitude pourrait m'aider à vivre cette journée avec davantage de sérénité ?"
+},
+{
+ id:4, category:"foi", categoryName:"Foi et protection",
+ title:"Trouver la force dans l'épreuve",
+ reference:"Ésaïe 41:10",
+ description:"Pour les périodes difficiles où continuer semble compliqué.",
+ prayer:`Dieu fidèle,
+
+Je traverse peut-être une période que je n'avais pas imaginée. Certains jours, mes forces diminuent et le chemin semble plus long que prévu.
+
+Je Te demande de renouveler mon courage. Aide-moi à ne pas confondre une difficulté passagère avec une défaite définitive.
+
+Donne-moi la patience de traverser cette saison, la sagesse de reconnaître les bonnes décisions et la force de ne pas abandonner ce qui mérite d'être poursuivi.
+
+Que Ta présence me soutienne lorsque mes propres ressources semblent insuffisantes.
+
+Amen.`,
+ reflection:"Quelle épreuve demande aujourd'hui de la patience et du courage dans ma vie ?"
+},
+{
+ id:5, category:"foi", categoryName:"Foi et protection",
+ title:"Avancer avec confiance",
+ reference:"Proverbes 3:5-6",
+ description:"Pour confier ses projets et ses décisions à Dieu.",
+ prayer:`Seigneur,
+
+Je ne connais pas tous les chemins qui se présentent devant moi, mais je souhaite avancer avec confiance.
+
+Aide-moi à ne pas prendre mes décisions uniquement sous l'effet de la précipitation ou de l'inquiétude.
+
+Donne-moi le discernement pour reconnaître les bonnes opportunités, la prudence pour éviter les mauvais choix et l'humilité pour demander conseil lorsque cela est nécessaire.
+
+Bénis mes projets et guide mes pas vers ce qui est juste et bon.
+
+Je Te confie mon chemin, aujourd'hui et pour les jours à venir.
+
+Amen.`,
+ reflection:"Quelle décision ai-je besoin de prendre avec davantage de calme et de discernement ?"
+},
+{
+ id:6, category:"foi", categoryName:"Foi et protection",
+ title:"Une prière de protection",
+ reference:"Psaume 121:7-8",
+ description:"Pour demander la protection et la sérénité dans ses déplacements et activités.",
+ prayer:`Père bienveillant,
+
+Je Te confie ma vie, ma famille et toutes les personnes qui me sont chères.
+
+Veille sur nos déplacements, nos rencontres et nos activités. Donne-nous la prudence dans nos choix et la sagesse dans nos comportements.
+
+Protège nos foyers et aide-nous à construire un environnement rempli de respect, de patience et d'amour.
+
+Lorsque l'incertitude se présente, rappelle-nous de rester vigilants sans vivre dans la peur.
+
+Que chaque journée soit vécue avec reconnaissance et confiance.
+
+Amen.`,
+ reflection:"Quelles personnes et quelles situations ai-je envie de confier à Dieu aujourd'hui ?"
+},
+{
+ id:7, category:"gratitude", categoryName:"Gratitude et provision",
+ title:"Remercier pour les bénédictions",
+ reference:"1 Thessaloniciens 5:18",
+ description:"Pour apprendre à reconnaître les bienfaits, même les plus discrets.",
+ prayer:`Seigneur,
+
+Merci pour la vie, pour le souffle de ce jour et pour toutes les petites choses que je ne prends pas toujours le temps de remarquer.
+
+Merci pour les personnes qui m'accompagnent, les occasions d'apprendre et les forces que je découvre en avançant.
+
+Aide-moi à ne pas mesurer ma vie uniquement à ce qui me manque. Ouvre mes yeux sur les bienfaits déjà présents autour de moi.
+
+Que la gratitude transforme ma manière de regarder le monde et inspire mes gestes envers les autres.
+
+Amen.`,
+ reflection:"Quelles sont les trois choses, petites ou grandes, pour lesquelles je peux remercier Dieu aujourd'hui ?"
+},
+{
+ id:8, category:"gratitude", categoryName:"Gratitude et provision",
+ title:"Confier son travail à Dieu",
+ reference:"Colossiens 3:23",
+ description:"Pour demander sagesse, persévérance et honnêteté dans ses activités.",
+ prayer:`Dieu de sagesse,
+
+Je Te confie mon travail, mes responsabilités et les efforts que je fais chaque jour.
+
+Aide-moi à agir avec honnêteté, sérieux et persévérance. Donne-moi l'énergie nécessaire pour accomplir mes tâches et l'humilité de reconnaître ce que je peux encore améliorer.
+
+Bénis mes projets et mes initiatives. Aide-moi à trouver des solutions justes aux difficultés et à garder un cœur reconnaissant, quels que soient les résultats.
+
+Que mon travail soit utile, digne et porteur de bonnes choses.
+
+Amen.`,
+ reflection:"Comment puis-je accomplir mes responsabilités avec davantage de sens et de dévouement ?"
+},
+{
+ id:9, category:"gratitude", categoryName:"Gratitude et provision",
+ title:"Demander sagesse et discernement",
+ reference:"Jacques 1:5",
+ description:"Pour prendre des décisions réfléchies et responsables.",
+ prayer:`Seigneur,
+
+Je Te demande la sagesse pour comprendre les situations que je rencontre.
+
+Aide-moi à distinguer ce qui est essentiel de ce qui est secondaire. Donne-moi la patience de réfléchir avant d'agir et le courage de choisir ce qui est juste, même lorsque ce choix est difficile.
+
+Éloigne de moi les décisions guidées uniquement par l'orgueil, la colère ou la précipitation.
+
+Que mes pensées soient éclairées par la vérité et que mes actions soient guidées par la bienveillance.
+
+Amen.`,
+ reflection:"Dans quel domaine de ma vie ai-je particulièrement besoin de discernement ?"
+},
+{
+ id:10, category:"esperance", categoryName:"Pardon et espérance",
+ title:"Apprendre à pardonner",
+ reference:"Colossiens 3:13",
+ description:"Pour avancer vers le pardon sans nier les blessures.",
+ prayer:`Père céleste,
+
+Tu connais les blessures que je porte et les paroles qui ont parfois laissé des traces dans mon cœur.
+
+Aide-moi à avancer sur le chemin du pardon, sans nier ce que j'ai vécu ni minimiser mes souffrances.
+
+Donne-moi la force de ne pas laisser le ressentiment gouverner ma vie. Apprends-moi à poser des limites saines lorsque cela est nécessaire et à rechercher la paix sans renoncer à ma dignité.
+
+Aide-moi également à reconnaître mes propres erreurs et à demander pardon avec sincérité.
+
+Amen.`,
+ reflection:"Y a-t-il une blessure que je peux commencer à regarder avec plus de douceur et de recul ?"
+},
+{
+ id:11, category:"esperance", categoryName:"Pardon et espérance",
+ title:"Recommencer avec foi",
+ reference:"Lamentations 3:22-23",
+ description:"Pour retrouver l'élan après une déception ou un échec.",
+ prayer:`Seigneur,
+
+Je viens à Toi avec mes erreurs, mes regrets et mes projets interrompus.
+
+Aide-moi à comprendre que mon passé ne doit pas déterminer toute mon histoire. Donne-moi le courage de reconnaître ce qui doit changer et la force de recommencer avec humilité.
+
+Apprends-moi à tirer des leçons de mes expériences sans rester prisonnier de la culpabilité.
+
+Que ce nouveau jour soit une occasion de faire un pas différent, avec davantage de sagesse, de foi et d'espérance.
+
+Amen.`,
+ reflection:"Quel nouveau départ pourrais-je entreprendre aujourd'hui, même par une toute petite action ?"
+},
+{
+ id:12, category:"esperance", categoryName:"Pardon et espérance",
+ title:"Garder l'espérance",
+ reference:"Romains 15:13",
+ description:"Pour continuer à croire en des jours meilleurs.",
+ prayer:`Dieu d'espérance,
+
+Lorsque les circonstances semblent incertaines, aide-moi à ne pas perdre confiance.
+
+Rappelle-moi que chaque saison de la vie a ses défis et que je peux continuer à avancer même lorsque je ne vois pas encore clairement le chemin.
+
+Remplis mon cœur de paix, renouvelle ma patience et apprends-moi à reconnaître les possibilités qui se présentent.
+
+Que l'espérance m'aide à agir avec courage, à aimer avec sincérité et à accueillir demain sans être prisonnier des inquiétudes d'aujourd'hui.
+
+Amen.`,
+ reflection:"Quel signe d'espérance puis-je choisir de reconnaître dans ma vie aujourd'hui ?"
+}
+];
+
+const favorites = new Set(
+  JSON.parse(localStorage.getItem("coffret-favorites") || "[]")
+);
+
+let activeCategory = "all";
+let favoritesOnly = false;
+let currentPrayer = null;
+let fontSize = 19;
+
+const grid = document.getElementById("prayer-grid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty-state");
+const backdrop = document.getElementById("modal-backdrop");
+const modalPrayer = document.getElementById("modal-prayer");
+
+function saveFavorites() {
+  localStorage.setItem("coffret-favorites", JSON.stringify([...favorites]));
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+function renderPrayers() {
+  const term = search.value.toLowerCase().trim();
+
+  const filtered = prayers.filter(p => {
+    const matchesCategory = activeCategory === "all" || p.category === activeCategory;
+    const matchesFavorite = !favoritesOnly || favorites.has(p.id);
+    const matchesSearch = `${p.title} ${p.description} ${p.categoryName} ${p.reference}`.toLowerCase().includes(term);
+    return matchesCategory && matchesFavorite && matchesSearch;
+  });
+
+  grid.innerHTML = filtered.map(p => `
+    <article class="prayer-card">
+      <div class="card-top">
+        <span class="category-tag">${p.categoryName}</span>
+        <button class="favorite-button ${favorites.has(p.id) ? "selected" : ""}"
+          data-favorite="${p.id}" aria-label="Ajouter aux favoris">
+          ${favorites.has(p.id) ? "♥" : "♡"}
+        </button>
+      </div>
+      <h3>${p.title}</h3>
+      <p>${p.description}</p>
+      <div class="card-bottom">
+        <span class="card-reference">${p.reference}</span>
+        <button class="read-button" data-read="${p.id}">LIRE LA PRIÈRE →</button>
+      </div>
+    </article>
+  `).join("");
+
+  empty.style.display = filtered.length ? "none" : "block";
+}
+
+function toggleFavorite(id) {
+  if (favorites.has(id)) {
+    favorites.delete(id);
+    showToast("Retirée de vos favoris.");
+  } else {
+    favorites.add(id);
+    showToast("Ajoutée à vos favoris.");
+  }
+
+  saveFavorites();
+  renderPrayers();
+
+  if (currentPrayer && currentPrayer.id === id) {
+    updateModalFavorite();
+  }
+}
+
+function updateModalFavorite() {
+  const button = document.getElementById("modal-favorite");
+  const selected = favorites.has(currentPrayer.id);
+  button.textContent = selected ? "♥ Retirer des favoris" : "♡ Ajouter aux favoris";
+}
+
+function openPrayer(id) {
+  const p = prayers.find(item => item.id === id);
+  if (!p) return;
+
+  currentPrayer = p;
+  fontSize = 19;
+
+  document.getElementById("modal-category").textContent = p.categoryName;
+  document.getElementById("modal-title").textContent = p.title;
+  document.getElementById("modal-reference").textContent = "Référence biblique : " + p.reference;
+  modalPrayer.textContent = p.prayer;
+  modalPrayer.style.fontSize = fontSize + "px";
+  document.getElementById("modal-reflection").textContent = p.reflection;
+
+  updateModalFavorite();
+  backdrop.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("modal-close").focus();
+}
+
+function closeModal() {
+  backdrop.classList.remove("open");
+  document.body.style.overflow = "";
+  currentPrayer = null;
+}
+
+grid.addEventListener("click", e => {
+  const favoriteButton = e.target.closest("[data-favorite]");
+  const readButton = e.target.closest("[data-read]");
+
+  if (favoriteButton) toggleFavorite(Number(favoriteButton.dataset.favorite));
+  if (readButton) openPrayer(Number(readButton.dataset.read));
+});
+
+document.getElementById("categories").addEventListener("click", e => {
+  const button = e.target.closest("[data-category]");
+  if (!button) return;
+
+  activeCategory = button.dataset.category;
+
+  document.querySelectorAll("#categories button").forEach(btn => {
+    btn.classList.toggle("active", btn === button);
+  });
+
+  renderPrayers();
+});
+
+search.addEventListener("input", renderPrayers);
+
+document.getElementById("favorites-filter").addEventListener("click", e => {
+  favoritesOnly = !favoritesOnly;
+  e.currentTarget.classList.toggle("active", favoritesOnly);
+  e.currentTarget.textContent = favoritesOnly ? "♥ Voir toutes" : "♡ Mes favoris";
+  renderPrayers();
+});
+
+document.getElementById("modal-close").addEventListener("click", closeModal);
+
+backdrop.addEventListener("click", e => {
+  if (e.target === backdrop) closeModal();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && backdrop.classList.contains("open")) closeModal();
+});
+
+document.getElementById("daily-button").addEventListener("click", () => {
+  const day = Math.floor(Date.now() / 86400000);
+  const prayer = prayers[day % prayers.length];
+  openPrayer(prayer.id);
+});
+
+document.getElementById("modal-favorite").addEventListener("click", () => {
+  if (currentPrayer) toggleFavorite(currentPrayer.id);
+});
+
+document.getElementById("copy-button").addEventListener("click", async () => {
+  if (!currentPrayer) return;
+
+  const text = `${currentPrayer.title}\n\n${currentPrayer.prayer}\n\nRéférence biblique : ${currentPrayer.reference}`;
+
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast("Prière copiée avec succès.");
+  } catch {
+    const area = document.createElement("textarea");
+    area.value = text;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+    showToast("Prière copiée avec succès.");
+  }
+});
+
+document.getElementById("font-up").addEventListener("click", () => {
+  fontSize = Math.min(27, fontSize + 1);
+  modalPrayer.style.fontSize = fontSize + "px";
+});
+
+document.getElementById("font-down").addEventListener("click", () => {
+  fontSize = Math.max(15, fontSize - 1);
+  modalPrayer.style.fontSize = fontSize + "px";
+});
+
+const today = new Date();
+const dailyPrayer = prayers[Math.floor(
+  Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) / 86400000
+) % prayers.length];
+
+document.getElementById("daily-title").textContent = dailyPrayer.title;
+document.getElementById("daily-description").textContent = dailyPrayer.description;
+
+renderPrayers();
+</script>
+
+</body>
+</html>
